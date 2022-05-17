@@ -1,11 +1,19 @@
 def verificar():
-    number=int(input("Escriba un nÃºmero: "))
+    number=input("Escriba un numero: ")
     
-    if number%2 !=0:
-        print("El numero "+str(number)+" es impar.\n")
+    number=number.strip()
+    number=number.replace(" ", "")
+    
+    if number.isdigit():
+        
+        if int(number)%2 !=0:
+            print("El numero "+str(number)+" es impar.\n")
+        else:
+            print("El numero "+str(number)+" es par.\n")
+        answer()
     else:
-        print("El numero "+str(number)+" es par.\n")
-    answer()
+        print("Escribe un número valido, sin letras ni puntos ni guiones.\n")
+        verificar()
 
 
 def answer():
