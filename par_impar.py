@@ -2,26 +2,31 @@ def verificar():
     number=int(input("Escriba un número: "))
     
     if number%2 !=0:
-        print("El número "+str(number)+" es impar.\n")
+        print("El numero "+str(number)+" es impar.\n")
     else:
-        print("El número "+str(number)+" es par.\n")
+        print("El numero "+str(number)+" es par.\n")
     answer()
 
 
 def answer():
-    respuesta=int(input(""" Quieres continuar con el juego?
+    respuesta=input(""" Quieres continuar con el juego?
     
-    1- Sí
+    1- Si
     2- No
     
-    """))
-    
-    if respuesta == 1:
-        verificar()
-    elif respuesta == 2:
-        print("Nos vemos en la próxima!!\n")
+    """)
+    respuesta=respuesta.replace(" ","")
+    if respuesta.isdigit():
+        
+        if int(respuesta) == 1:
+            verificar()
+        elif int(respuesta) == 2:
+            print("Nos vemos en la proxima!!\n")
+        else:
+            print("Escriba una opcion valida.\n")
+            answer()
     else:
-        print("Escriba una opción válida.\n")
+        print("Escriba una opcion valida.\n")
         answer()
     
 
